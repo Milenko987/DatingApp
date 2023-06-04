@@ -21,6 +21,8 @@ namespace API.Controllers
             return Ok(users);
         }
 
+        [HttpGet]
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
