@@ -1,20 +1,13 @@
-﻿using API.Extensions;
-using System.ComponentModel.DataAnnotations;
-
-namespace API.Entitites
+﻿namespace API.DTO
 {
-    public class AppUser
+    public class UserToReturnDTO
     {
-        [Key]
         public int Id { get; set; }
 
         public string UserName { get; set; }
 
-        public byte[] PasswordHash { get; set; }
-
-        public byte[] PasswordSalt { get; set; }
-
-        public DateTime DateOfBirth { get; set; }
+        public string photoUrl { get; set; }
+        public int Age { get; set; }
 
         public string KnownAs { get; set; }
 
@@ -34,11 +27,6 @@ namespace API.Entitites
 
         public string Country { get; set; }
 
-        public List<Photo> Photos { get; set; } = new List<Photo>();
-
-        public int GetAge()
-        {
-            return DateOfBirth.CalculateAge();
-        }
+        public List<PhotoDto> Photos { get; set; } = new List<PhotoDto>();
     }
 }
